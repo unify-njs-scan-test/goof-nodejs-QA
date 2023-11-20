@@ -103,12 +103,12 @@ A POST request to `/login` will allow for authentication and signing-in to the s
 It works by exposing `loginHandler` as a controller in `routes/index.js` and uses a MongoDB database and the `User.find()` query to look up the user's details (email as a username and password). One issue is that it indeed stores passwords in plaintext and not hashing them. However, there are other issues in play here...
 
 
-We can send a request with an incorrect password to see that we get a failed attempt
+## We can send a request with an incorrect password to see that we get a failed attempt
 ```sh
 echo '{"username":"admin@snyk.io", "password":"WrongPassword"}' | http --json $GOOF_HOST/login -v
 ```
 
-And another request, as denoted with the following JSON request to sign-in as the admin user works as expected:
+## And another request, as denoted with the following JSON request to sign-in as the admin user works as expected:
 ```sh
 echo '{"username":"admin@snyk.io", "password":"SuperSecretPassword"}' | http --json $GOOF_HOST/login -v
 ```
