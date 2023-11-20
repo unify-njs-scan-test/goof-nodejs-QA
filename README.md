@@ -100,7 +100,7 @@ curl -X 'POST' -H 'Content-Type: application/json' --data-binary "{\"email\": \"
 #### NoSQL injection
 
 A POST request to `/login` will allow for authentication and signing-in to the system as an administrator user.
-It works by exposing `loginHandler` as a controller in `routes/index.js` and uses a MongoDB database and the `User.find()` query to look up the user's details (email as a username and password). One issue is that it indeed stores passwords in plaintext and not hashing them. However, there are other issues in play here.
+It works by exposing `loginHandler` as a controller in `routes/index.js` and uses a MongoDB database and the `User.find()` query to look up the user's details (email as a username and password). One issue is that it indeed stores passwords in plaintext and not hashing them. However, there are other issues in play here...
 
 
 We can send a request with an incorrect password to see that we get a failed attempt
