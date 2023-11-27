@@ -182,7 +182,7 @@ snyk monitor --docker node:6-stretch
 
 ## Runtime Alerts
 
-Snyk provides the ability to monitor application runtime behavior and detect an invocation of a function is known to be vulnerable and used within open source dependencies that the application makes use of.
+## Snyk provides the ability to monitor application runtime behavior and detect an invocation of a function is known to be vulnerable and used within open source dependencies that the application makes use of.
 
 The agent is installed and initialized in [app.js](./app.js#L5).
 
