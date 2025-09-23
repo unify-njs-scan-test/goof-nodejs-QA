@@ -1,0 +1,19 @@
+name: njsscan-scan-test-goof
+kind: workflow
+apiVersion: automation.cloudbees.io/v1alpha1
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+permissions:
+  scm-token-own: read
+  scm-token-org: read
+  id-token: write
+jobs:
+  njsscan-hybrid-scan:
+    steps:
+      - name: checkout Source Code
+        uses: cloudbees-io/checkout@v1
+      - name: njsscan hybrid plugin scan
+        uses: cloudbees-io/njsscan-hybrid-plugin@v1
